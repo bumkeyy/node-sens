@@ -1,0 +1,23 @@
+{
+  "name": "sens",
+  "version": "0.0.1",
+  "description": "Simple & Easy Notification Service client in NAVER CLOUD PLATFORM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bumkeyy/sens.git"
+  },
+  "author": "bumkeyy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bumkeyy/sens/issues"
+  },
+  "homepage": "https://github.com/Bumkeyy/sens#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
