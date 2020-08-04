@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "build": "tsc",
     "prebuild": "rm -rf dist"
   },
