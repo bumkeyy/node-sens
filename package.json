@@ -5,9 +5,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "test",
     "build": "tsc",
-    "prebuild": "rm -rf dist"
+    "prebuild": "rm -rf dist",
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   "devDependencies": {
     "@types/jest": "^26.0.8",
     "@types/request": "^2.48.5",
+    "coveralls": "^3.1.0",
+    "istanbul": "^0.4.5",
     "jest": "^26.2.2",
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
