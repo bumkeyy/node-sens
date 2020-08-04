@@ -7,8 +7,7 @@
   "scripts": {
     "test": "test",
     "build": "tsc",
-    "prebuild": "rm -rf dist",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "prebuild": "rm -rf dist"
   },
   "repository": {
     "type": "git",

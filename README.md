@@ -1,5 +1,7 @@
 # sens
 
+![travisci](https://travis-ci.com/Bumkeyy/sens.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Bumkeyy/sens/badge.svg)](https://coveralls.io/github/Bumkeyy/sens)
+
 Simple &amp; Easy Notification Service client in NAVER CLOUD PLATFORM
 
 ![readme](/assets/readme.png)
