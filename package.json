@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "prebuild": "rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,11 @@
   },
   "homepage": "https://github.com/Bumkeyy/sens#readme",
   "devDependencies": {
+    "@types/request": "^2.48.5",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "request": "^2.88.2"
   }
 }
