@@ -1,4 +1,4 @@
-# sens
+# node-sens
 
 ![travisci](https://travis-ci.com/Bumkeyy/sens.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Bumkeyy/sens/badge.svg)](https://coveralls.io/github/Bumkeyy/sens)
 
@@ -11,8 +11,8 @@ Naver Cloud Platform에서 제공하는 SENS client 입니다.
 ## Installation
 
 ```sh
-npm install sens --save
-yarn add sens
+npm install node-sens --save
+yarn add node-sens
 ```
 
 ## Usage
