@@ -18,7 +18,7 @@ yarn add node-sens
 ## Usage
 
 ```typescript
-import { NCPClient } from 'sens';
+import { NCPClient } from 'node-sens';
 
 const ncp = new NCPClient({
   phoneNumber: '000-0000-0000',
