@@ -2,7 +2,7 @@
 
 Simple &amp; Easy Notification Service client in NAVER CLOUD PLATFORM
 
-![스크린샷 2020-08-05 오전 2.12.18](/assets/스크린샷%202020-08-05%20오전%202.12.18.png)
+![readme](/assets/readme.png)
 
 Naver Cloud Platform에서 제공하는 SENS client 입니다.
 
