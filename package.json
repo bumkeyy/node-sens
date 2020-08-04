@@ -1,6 +1,6 @@
 {
   "name": "sens",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple & Easy Notification Service client in NAVER CLOUD PLATFORM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
