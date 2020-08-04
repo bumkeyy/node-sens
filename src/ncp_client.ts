@@ -80,7 +80,7 @@ export class NCPClient {
             'Content-Type': 'application/json; charset=utf-8',
             'x-ncp-iam-access-key': this.accessKey,
             'x-ncp-apigw-timestamp': this.timestamp,
-            'x-ncp-apigw-signature-v2': this.signature.toString(),
+            'x-ncp-apigw-signature-v2': this.signature,
           },
           body: {
             type: 'SMS',
