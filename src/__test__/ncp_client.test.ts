@@ -3,6 +3,13 @@ import { NCPClient } from '../ncp_client';
 
 jest.mock('axios');
 
+const to = '000';
+const content = 'test message';
+const phoneNumber = 'phonenumber';
+const serviceId = 'serviceId';
+const secretKey = 'secretKey';
+const accessKey = 'accessKey';
+
 describe('NCP Client', () => {
   let ncp: NCPClient;
 
@@ -10,10 +17,10 @@ describe('NCP Client', () => {
 
   beforeAll(() => {
     ncp = new NCPClient({
-      phoneNumber: 'phonenumber',
-      serviceId: 'serviceId',
-      secretKey: 'secretKey',
-      accessKey: 'accessKey',
+      phoneNumber,
+      serviceId,
+      secretKey,
+      accessKey,
     });
   });
 
@@ -21,10 +28,10 @@ describe('NCP Client', () => {
     expect(
       () =>
         new NCPClient({
-          phoneNumber: 'phonenumber',
-          serviceId: 'serviceId',
-          secretKey: 'secretKey',
-          accessKey: 'accessKey',
+          phoneNumber,
+          serviceId,
+          secretKey,
+          accessKey,
         })
     ).not.toThrow();
   });
@@ -36,7 +43,10 @@ describe('NCP Client', () => {
         statusText: 'Accepted',
       })
     );
-    const { success, msg, status } = await ncp.sendSMS('0000', 'Test Message');
+    const { success, msg, status } = await ncp.sendSMS({
+      to,
+      content,
+    });
     expect(success).toBe(true);
     expect(msg).toBe('Accepted');
     expect(status).toBe(202);
@@ -51,8 +61,10 @@ describe('NCP Client', () => {
         },
       })
     );
-    const { success, msg, status } = await ncp.sendSMS('0000', 'Test Message');
-
+    const { success, msg, status } = await ncp.sendSMS({
+      to,
+      content,
+    });
     expect(success).toBe(false);
     expect(msg).toBe('Unauthorized');
     expect(status).toBe(401);
@@ -67,7 +79,10 @@ describe('NCP Client', () => {
         },
       })
     );
-    const { success, msg, status } = await ncp.sendSMS('0000', 'Test Message');
+    const { success, msg, status } = await ncp.sendSMS({
+      to,
+      content,
+    });
 
     expect(success).toBe(false);
     expect(msg).toBe('Not Found');

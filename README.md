@@ -1,6 +1,6 @@
 # node-sens
 
-[![npm version](https://badge.fury.io/js/node-sens.svg)](https://badge.fury.io/js/node-sens) ![travisci](https://travis-ci.com/Bumkeyy/sens.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Bumkeyy/sens/badge.svg)](https://coveralls.io/github/Bumkeyy/sens)
+[![npm version](https://badge.fury.io/js/node-sens.svg)](https://badge.fury.io/js/node-sens) ![travisci](https://travis-ci.com/Bumkeyy/sens.svg?branch=master) ![GitHub Release Date](https://img.shields.io/github/release-date/bumkeyy/Node-sens)
 
 Simple &amp; Easy Notification Service client in NAVER CLOUD PLATFORM
 
@@ -38,9 +38,16 @@ const ncp = new NCPClient({
 - `accessKey` (string): 프로젝트 계정의 accessKey
 
 ```typescript
-const {success, msg, status} = ncp.sendSMS(to:'000-0000-0000', content:'Hello SENS');
+const { success, msg, status } = ncp.sendSMS({
+  to: '000-0000-0000',
+  content: 'Hello SENS',
+});
 
-const {success, msg, status} = ncp.sendSMS(to:'000-0000-0000', content:'Hello SENS', countryCode:'82');
+const { success, msg, status } = ncp.sendSMS({
+  to: '000-0000-0000',
+  content: 'Hello SENS',
+  countryCode: '82',
+});
 ```
 
 #### Parameter Type

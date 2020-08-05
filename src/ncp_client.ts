@@ -8,6 +8,12 @@ export type NCPClientOptions = {
   accessKey: string;
 };
 
+export type sendSMSType = {
+  to: string;
+  content: string;
+  countryCode?: string;
+};
+
 export type sendSMSReturnType = {
   success: boolean;
   msg: string;
@@ -75,11 +81,11 @@ export class NCPClient {
    * @returns Promise with success(boolean), msg(string), status(number)
    *
    */
-  public async sendSMS(
-    to: string,
-    content: any,
-    countryCode: string = '82'
-  ): Promise<sendSMSReturnType> {
+  public async sendSMS({
+    to,
+    content,
+    countryCode = '82',
+  }: sendSMSType): Promise<sendSMSReturnType> {
     try {
       const response = await axios({
         method: 'POST',
