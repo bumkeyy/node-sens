@@ -1,4 +1,4 @@
-import request from 'request';
+import axios from 'axios';
 import crypto from 'crypto';
 
 export type NCPClientOptions = {
@@ -10,7 +10,8 @@ export type NCPClientOptions = {
 
 export type sendSMSReturnType = {
   success: boolean;
-  msg: string | null;
+  msg: string;
+  status: number;
 };
 
 export class NCPClient {
@@ -71,52 +72,57 @@ export class NCPClient {
    * @param content 전달할 내용
    * @param countryCode 국가 코드 (default 82)
    *
-   * @returns Promise any
+   * @returns Promise with success(boolean), msg(string), status(number)
    *
    */
-  public sendSMS(
+  public async sendSMS(
     to: string,
     content: any,
     countryCode: string = '82'
   ): Promise<sendSMSReturnType> {
-    return new Promise<sendSMSReturnType>((resolve, reject) => {
-      request(
-        {
-          method: this.method,
-          json: true,
-          uri: this.url,
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-            'x-ncp-iam-access-key': this.accessKey,
-            'x-ncp-apigw-timestamp': this.timestamp,
-            'x-ncp-apigw-signature-v2': this.signature,
-          },
-          body: {
-            type: 'SMS',
-            contentType: 'COMM',
-            countryCode,
-            from: this.phoneNumber,
-            content,
-            messages: [
-              {
-                to: `${to}`,
-              },
-            ],
-          },
+    try {
+      const response = await axios({
+        method: 'POST',
+        url: this.url,
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'x-ncp-iam-access-key': this.accessKey,
+          'x-ncp-apigw-timestamp': this.timestamp,
+          'x-ncp-apigw-signature-v2': this.signature,
         },
-        (err, res, html) => {
-          if (!err && res.statusCode === 202) {
-            resolve({ success: true, msg: null });
-          } else if (html.error) {
-            reject(html.error);
-          } else {
-            reject(err);
-          }
-        }
-      );
-    }).catch((err: any) => {
-      console.log(`ERROR : ${JSON.stringify(err)}`);
-      return { success: false, msg: err };
-    });
+        data: {
+          type: 'SMS',
+          contentType: 'COMM',
+          countryCode,
+          from: this.phoneNumber,
+          content,
+          messages: [
+            {
+              to: `${to}`,
+            },
+          ],
+        },
+      });
+
+      if (response.status === 202) {
+        return {
+          success: true,
+          status: response.status,
+          msg: response.statusText,
+        };
+      } else {
+        return {
+          success: false,
+          status: response.status,
+          msg: response.statusText,
+        };
+      }
+    } catch (error) {
+      return {
+        success: false,
+        msg: error.response.statusText || 'Internal Server Error',
+        status: error.response.status || 500,
+      };
+    }
   }
 }

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "build": "tsc",
     "prebuild": "rm -rf dist"
   },
@@ -29,8 +29,8 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "crypto": "^1.0.1",
-    "request": "^2.88.2"
+    "axios": "^0.19.2",
+    "crypto": "^1.0.1"
   },
   "jest": {
     "transform": {
