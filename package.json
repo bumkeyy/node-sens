@@ -1,6 +1,6 @@
 {
   "name": "node-sens",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Simple & Easy Notification Service client in NAVER CLOUD PLATFORM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,5 +48,14 @@
         "diagnostics": true
       }
     }
-  }
+  },
+  "keywords": [
+    "http",
+    "sms",
+    "naver",
+    "ncp",
+    "platform",
+    "client",
+    "node"
+  ]
 }
