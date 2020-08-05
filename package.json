@@ -11,17 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bumkeyy/sens.git"
+    "url": "git+https://github.com/Bumkeyy/node-sens.git"
   },
   "author": "bumkeyy <kgbum2222@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Bumkeyy/sens/issues"
+    "url": "https://github.com/Bumkeyy/node-sens/issues"
   },
-  "homepage": "https://github.com/Bumkeyy/sens#readme",
+  "homepage": "https://github.com/Bumkeyy/node-sens#readme",
   "devDependencies": {
     "@types/jest": "^26.0.8",
-    "@types/request": "^2.48.5",
     "coveralls": "^3.1.0",
     "istanbul": "^0.4.5",
     "jest": "^26.2.2",
