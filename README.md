@@ -28,20 +28,23 @@ const ncp = new NCPClient({
 });
 ```
 
-- `phoneNumber` : 발신 전화번호
-- `serviceId` : 프로젝트의 서비스 id
-- `secretKey` : 프로젝트 계정의 secretKey
-- `accessKey` : 프로젝트 계정의 accessKey
+- `phoneNumber` (string): 발신 전화번호
+- `serviceId` (string): 프로젝트의 서비스 id
+- `secretKey` (string): 프로젝트 계정의 secretKey
+- `accessKey` (string): 프로젝트 계정의 accessKey
 
 ```typescript
-ncp.sendSMS(to:'000-0000-0000', content:'Hello SENS');
+const {success, msg} = ncp.sendSMS(to:'000-0000-0000', content:'Hello SENS');
 
-ncp.sendSMS(to:'000-0000-0000', content:'Hello SENS', countryCode:'82');
+const {success, msg} = ncp.sendSMS(to:'000-0000-0000', content:'Hello SENS', countryCode:'82');
 ```
 
-- `to` : 수신 전화번호
-- `content` : 보낼 내용
+- `to` (string): 수신 전화번호
+- `content` (string): 보낼 내용
 - `countryCode`(optional) : 국가 코드 (default : 82)
+
+- `success` (boolean) : `true`시 성공, `false`시 실패
+- `msg` (string) : 성공시 `null`, 실패시 `error message`
 
 ## Test
 

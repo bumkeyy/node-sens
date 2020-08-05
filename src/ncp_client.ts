@@ -8,6 +8,11 @@ export type NCPClientOptions = {
   accessKey: string;
 };
 
+export type sendSMSReturnType = {
+  success: boolean;
+  msg: string | null;
+};
+
 export class NCPClient {
   private phoneNumber: string;
   private serviceId: string;
@@ -69,8 +74,12 @@ export class NCPClient {
    * @returns Promise any
    *
    */
-  public sendSMS(to: string, content: any, countryCode: string = '82') {
-    return new Promise((resolve, reject) => {
+  public sendSMS(
+    to: string,
+    content: any,
+    countryCode: string = '82'
+  ): Promise<sendSMSReturnType> {
+    return new Promise<sendSMSReturnType>((resolve, reject) => {
       request(
         {
           method: this.method,
@@ -97,20 +106,17 @@ export class NCPClient {
         },
         (err, res, html) => {
           if (!err && res.statusCode === 202) {
-            console.log(html);
-            resolve(true);
+            resolve({ success: true, msg: null });
           } else if (html.error) {
-            console.log(`${html.error.message}, ${html.error.details}`);
-            reject(false);
+            reject(html.error);
           } else {
-            console.log(err);
-            reject(false);
+            reject(err);
           }
         }
       );
     }).catch((err: any) => {
-      console.log(err);
-      return false;
+      console.log(`ERROR : ${JSON.stringify(err)}`);
+      return { success: false, msg: err };
     });
   }
 }
