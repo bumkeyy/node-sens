@@ -1,6 +1,6 @@
 # node-sens
 
-[![npm version](https://badge.fury.io/js/node-sens.svg)](https://badge.fury.io/js/node-sens) ![travisci](https://travis-ci.com/Bumkeyy/sens.svg?branch=master) ![GitHub Release Date](https://img.shields.io/github/release-date/bumkeyy/Node-sens)
+[![npm version](https://badge.fury.io/js/node-sens.svg)](https://badge.fury.io/js/node-sens) ![travisci](https://travis-ci.com/Bumkeyy/node-sens.svg?branch=master) ![GitHub Release Date](https://img.shields.io/github/release-date/bumkeyy/Node-sens)
 
 Simple &amp; Easy Notification Service client in NAVER CLOUD PLATFORM
 
