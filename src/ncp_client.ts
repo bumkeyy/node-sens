@@ -84,7 +84,7 @@ export class NCPClient {
   public async sendSMS({
     to,
     content,
-    countryCode = '82',
+    countryCode = '82'
   }: sendSMSType): Promise<sendSMSReturnType> {
     try {
       const response = await axios({

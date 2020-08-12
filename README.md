@@ -38,12 +38,12 @@ const ncp = new NCPClient({
 - `accessKey` (string): 프로젝트 계정의 accessKey
 
 ```typescript
-const { success, msg, status } = ncp.sendSMS({
+const { success, msg, status } = await ncp.sendSMS({
   to: '000-0000-0000',
   content: 'Hello SENS',
 });
 
-const { success, msg, status } = ncp.sendSMS({
+const { success, msg, status } = await ncp.sendSMS({
   to: '000-0000-0000',
   content: 'Hello SENS',
   countryCode: '82',
@@ -58,6 +58,9 @@ const { success, msg, status } = ncp.sendSMS({
 
 #### Return Type
 
+- `promise` : `promise`를 반환합니다.
+
+PromiseReturnType:  
 - `success` (boolean) : `true`시 성공, `false`시 실패
 - `msg` (string) : 성공시 `Accepted`, 실패시 `error message`
 - `status` (number) : status code
