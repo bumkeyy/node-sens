@@ -23,7 +23,7 @@ yarn add node-sens
 import { NCPClient } from 'node-sens';
 
 const ncp = new NCPClient({
-  phoneNumber: '000-0000-0000',
+  phoneNumber: '01012345678',
   serviceId: 'serviceId',
   secretKey: 'secretKey',
   accessKey: 'accessKey',
