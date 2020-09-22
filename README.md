@@ -39,12 +39,12 @@ const ncp = new NCPClient({
 
 ```typescript
 const { success, msg, status } = await ncp.sendSMS({
-  to: '000-0000-0000',
+  to: '01012345678',
   content: 'Hello SENS',
 });
 
 const { success, msg, status } = await ncp.sendSMS({
-  to: '000-0000-0000',
+  to: '01012345678',
   content: 'Hello SENS',
   countryCode: '82',
 });
